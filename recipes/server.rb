@@ -18,22 +18,7 @@
 #
 
 include_recipe "java"
-
-# Add APT public key for the 10gen MongoDB repo
-execute "apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10" do
-  not_if 'apt-key list | grep "7F0CEB10"'
-end
-
-# Add the 10gen MongoDB repository to APT
-apt_repository "mongodb" do
-  uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
-  distribution "dist"
-  components ["10gen"]
-  action :add
-end
-
-# Install required APT packages
-package "mongodb-10gen"
+include_recipe "mongodb"
 
 # Create the release directory
 directory "#{node[:graylog2][:basedir]}/rel" do
