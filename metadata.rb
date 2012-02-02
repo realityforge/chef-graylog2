@@ -9,5 +9,6 @@ recipe            "graylog2", "Installs and configures Graylog2"
 supports "ubuntu"
 
 # OpsCode cookbook dependencies
-depends "apt" # http://community.opscode.com/cookbooks/apt
-depends "apache2" # http://community.opscode.com/cookbooks/apache2
+depends "apt"
+depends "apache2"
+depends "java"

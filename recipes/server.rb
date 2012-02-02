@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "java"
+
 # Add APT public key for the 10gen MongoDB repo
 execute "apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10" do
   not_if 'apt-key list | grep "7F0CEB10"'
@@ -31,7 +33,6 @@ apt_repository "mongodb" do
 end
 
 # Install required APT packages
-package "openjdk-6-jre"
 package "mongodb-10gen"
 
 # Create the release directory
