@@ -12,7 +12,7 @@ syslog_protocol = udp
 mongodb_host = <%= node[:graylog2][:mongodb][:host] %>
 mongodb_port = <%= node[:graylog2][:mongodb][:port] %>
 mongodb_database = <%= node[:graylog2][:mongodb][:database] %>
-mongodb_useauth = <%= node[:graylog2][:mongodb][:auth] %>
+mongodb_useauth = true
 mongodb_user = <%= node[:graylog2][:mongodb][:user] %>
 mongodb_password = <%= node[:graylog2][:mongodb][:password] %>
 
