@@ -18,6 +18,14 @@
 #
 
 include_recipe "java"
+
+raise "Graylog mongo user undefined" if node[:graylog2][:mongodb][:user].nil?
+
+override[:mongodb][:databases][:graylog2][:users][node[:graylog2][:mongodb][:database]][node[:graylog2][:mongodb][:user]] = node[:graylog2][:mongodb][:password]
+
+override[:graylog2][:mongodb][:host] = node[:mongodb][:listen_address]
+override[:graylog2][:mongodb][:port] = node[:mongodb][:port]
+
 include_recipe "mongodb"
 
 # Create the release directory
