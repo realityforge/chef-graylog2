@@ -17,10 +17,6 @@
 # limitations under the License.
 #
 
-# Install required APT packages
-package "build-essential"
-package "postfix"
-
 # Install gem dependencies
 gem_package "bundler"
 gem_package "rake"
