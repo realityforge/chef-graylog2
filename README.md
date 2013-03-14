@@ -1,6 +1,8 @@
 Description
 ===========
 
+[![Build Status](https://secure.travis-ci.org/realityforge/chef-graylog2.png?branch=master)](http://travis-ci.org/realityforge/chef-graylog2)
+
 Installs and configures a Graylog2 server on Ubuntu systems (10.04 only at present).
 
 This is a Chef re-engineering of the Sean Porter (@portertech) Linode StackScript for graylog2, 
