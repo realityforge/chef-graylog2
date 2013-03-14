@@ -4,7 +4,8 @@ maintainer_email  "peter@realityforge.org"
 license           "Apache 2.0"
 description       "Installs and configures Graylog2"
 version           "0.0.7"
-recipe            "graylog2", "Installs and configures Graylog2"
+
+recipe            "default", "Installs and configures Graylog2"
 
 # Only supporting Ubuntu 10.x
 supports "ubuntu"
