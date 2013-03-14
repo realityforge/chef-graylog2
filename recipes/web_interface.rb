@@ -36,7 +36,7 @@ execute "tar zxf graylog2-web-interface-#{node[:graylog2][:web_interface][:versi
   cwd "#{node[:graylog2][:basedir]}/rel"
   creates "#{node[:graylog2][:basedir]}/rel/graylog2-web-interface-#{node[:graylog2][:web_interface][:version]}/build_date"
   action :nothing
-  subscribes :run, resources(:remote_file => "download_web_interface"), :immediately
+  subscribes :run, "remote_file[download_web_interface]", :immediately
 end
 
 # Link to the desired Graylog2 web interface version
@@ -48,7 +48,7 @@ end
 execute "bundle install" do
   cwd "#{node[:graylog2][:basedir]}/web"
   action :nothing
-  subscribes :run, resources(:link => "#{node[:graylog2][:basedir]}/web"), :immediately
+  subscribes :run, "link[#{node[:graylog2][:basedir]}/web]", :immediately
 end
 
 # Create mongoid.yml
@@ -70,7 +70,7 @@ execute "sudo chown -R nobody:nogroup graylog2-web-interface-#{node[:graylog2][:
     File.stat("#{node[:graylog2][:basedir]}/rel/graylog2-web-interface-#{node[:graylog2][:web_interface][:version]}").uid == 65534
   end
   action :nothing
-  subscribes :run, resources(:execute => "bundle install"), :immediately
+  subscribes :run, "execute[bundle install]", :immediately
 end
 
 # Stream message rake tasks
