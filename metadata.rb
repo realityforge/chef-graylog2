@@ -1,6 +1,6 @@
 name              "graylog2"
-maintainer        "Medidata Solutions Inc."
-maintainer_email  "cloudteam@mdsol.com"
+maintainer        "Peter Donald"
+maintainer_email  "peter@realityforge.org"
 license           "Apache 2.0"
 description       "Installs and configures Graylog2"
 version           "0.0.7"
