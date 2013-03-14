@@ -1,7 +1,4 @@
 #
-# Cookbook Name:: graylog2
-# Recipe:: apache2
-#
 # Copyright 2010, Medidata Solutions Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
